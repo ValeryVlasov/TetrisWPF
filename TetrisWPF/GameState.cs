@@ -20,7 +20,7 @@
 
         public GameState()
         {
-            GameGrid = new GameGrid(22, 12);
+            GameGrid = new GameGrid(22, 10);
             BlockQueue = new BlockQueue();
             CurrentBlock = BlockQueue.GetAndUpdate();
         }
@@ -80,11 +80,12 @@
 
         public void MoveBlockDown()
         {
-            CurrentBlock.Move(-1, 0);
+            CurrentBlock.Move(1, 0);
 
             if (!BlockFits())
             {
-                CurrentBlock.Move(1, 0);
+                CurrentBlock.Move(-1, 0);
+                PlaceBlock();
             }
         }
 

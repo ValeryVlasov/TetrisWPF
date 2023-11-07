@@ -20,6 +20,11 @@ namespace TetrisWPF
 
         public Block NextBlock { get; private set; }
 
+        public BlockQueue()
+        {
+            NextBlock = RandomBlock();
+        }
+
         private Block RandomBlock()
         {
             return blocks[random.Next(blocks.Length)];

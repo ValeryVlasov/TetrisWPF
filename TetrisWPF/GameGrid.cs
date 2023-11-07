@@ -71,7 +71,7 @@
         {
             int cleared = 0;
 
-            for (int r = 0; r < Rows; r++)
+            for (int r = Rows - 1; r >= 0; r--)
             {
                 if (IsRowFull(r))
                 {
